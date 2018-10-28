@@ -10,7 +10,9 @@ class Space extends Component {
   }
 
   handleClick = () => {
-    this.setState({value: 'X'});
+    if(!this.state.value){
+      this.setState({value: 'X'});
+    }
   }
   render() {
     return (

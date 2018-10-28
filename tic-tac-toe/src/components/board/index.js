@@ -21,11 +21,11 @@ class Board extends Component {
       <Space value={this.state.spaces[i]} onClick={() => this.handleClick(i)}></Space>
     )
   }
-  createRows = (rowAdjustment) => {
+  createRows = (rowNumber) => {
     let rows = [];
-    rowAdjustment = (rowAdjustment*3);
+    rowNumber = (rowNumber*3);
     for(let i = 0; i < 3; i++) {
-        rows.push(<div key={i+rowAdjustment} className="col">{this.createSpace(i+rowAdjustment)}</div>);
+        rows.push(<div key={i+rowNumber} className="col">{this.createSpace(i+rowNumber)}</div>);
       }
     return rows;
   }
@@ -39,7 +39,7 @@ class Board extends Component {
   render() {
     return (
       <div className="board">
-      {this.createBoard()}
+        {this.createBoard()}
       </div>
     );
   }

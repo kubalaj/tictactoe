@@ -11,15 +11,20 @@ class Board extends Component {
       spaces: Array(9).fill(null)
     };
   }
-  createBoard = (i) => {
+  createSpace = (i) => {
     return(
       <Space value={this.state.spaces[i]}></Space>
     )
   }
-  test = () => {
+  createBoard = () => {
     let board = [];
-    for(let i = 0; i< 3; i++) {
-      board.push(<div key={i} className="col"><Space value={this.state.spaces[i]}></Space></div>);
+    for(let i = 0; i < 9; i++) {
+      board.push(
+                <div key={i} className="col">
+                  {this.createSpace(i)}
+                  <Space value={this.state.spaces[i]}></Space>
+                 </div>
+                );
     }
     return board;
   }
@@ -27,7 +32,7 @@ class Board extends Component {
     return (
       <div className="board">
         <div className="row">
-          {this.test()}
+          {this.createBoard()}
         </div>
         <div className="row">
           <div className="col">

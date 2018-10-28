@@ -5,6 +5,12 @@ import Space from '../space';
 
 
 class Board extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spaces: Array(9).fill(null)
+    };
+  }
   render() {
     return (
       <div className="board">

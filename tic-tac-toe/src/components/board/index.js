@@ -16,45 +16,24 @@ class Board extends Component {
       <Space value={this.state.spaces[i]}></Space>
     )
   }
-  createBoard = () => {
+  createRows = () => {
     let board = [];
-    for(let i = 0; i < 9; i++) {
-      board.push(
-                <div key={i} className="col">
-                  {this.createSpace(i)}
-                  <Space value={this.state.spaces[i]}></Space>
-                 </div>
-                );
-    }
+    for(let i = 0; i < 3; i++) {
+        board.push(<div key={i} className="col">{this.createSpace(i)}</div>);
+      }
     return board;
   }
   render() {
     return (
       <div className="board">
         <div className="row">
-          {this.createBoard()}
+          {this.createRows()}
         </div>
         <div className="row">
-          <div className="col">
-            {this.createBoard(3)}
-          </div>
-          <div className="col">
-            {this.createBoard(4)}
-          </div>
-          <div className="col">
-            {this.createBoard(5)}
-          </div>
+            {this.createRows()}
         </div>
         <div className="row">
-          <div className="col">
-            {this.createBoard(6)}
-          </div>
-          <div className="col">
-            {this.createBoard(7)}
-          </div>
-          <div className="col">
-            {this.createBoard(8)}
-          </div>
+            {this.createRows()}
         </div>
       </div>
     );

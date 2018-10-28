@@ -28,7 +28,8 @@ Building
     cd backend-ai
     python3 -m venv venv
 
-  Running
+  Activate Env
+  `. venv/bin/activate`
 
 
 # Instructions

@@ -1,6 +1,13 @@
 @import "../../index";
 
 .board {
+  .row {
+    border-bottom: 3px solid black;
+    &:last-child {
+      border: none;
+    }
+
+  }
   .col {
     border-right: 3px solid black;
     &:last-child {

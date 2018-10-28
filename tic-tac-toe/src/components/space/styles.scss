@@ -3,6 +3,8 @@
 .space {
     color: $color-secondary;
     font-size: 50px;
+    min-width: 200px;
+    min-height: 200px;
     font-family: $font-primary;
     text-align: center;
 }

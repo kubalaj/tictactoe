@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import './styles.scss';
 
 class Space extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null
+    };
+  }
 
-  handleClick() {
-    console.log('click yo');
+  handleClick = () => {
+    this.setState({value: 'X'});
   }
   render() {
     return (
-      <div className="space" onClick={this.handleClick}>X</div>
+      <div className="space" onClick={this.handleClick}>
+        {this.state.value}
+      </div>
     );
   }
 }

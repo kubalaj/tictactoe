@@ -18,6 +18,19 @@ FE
 `npm run eject`
   Removes this tool and copies build dependencies, configuration files
   and scripts into the app directory. If you do this, you can’t go back!
+
+
+  BE
+
+Building
+  - Download python https://www.python.org/downloads/
+  - Install virtual env
+    cd backend-ai
+    python3 -m venv venv
+
+  Running
+
+
 # Instructions
 
 1. Create a program that can interactively play the game of Tic-Tac-Toe against a human

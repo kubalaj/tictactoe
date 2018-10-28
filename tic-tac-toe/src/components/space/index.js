@@ -14,6 +14,7 @@ class Space extends Component {
       this.setState({value: 'X'});
     }
   }
+
   render() {
     return (
       <div className="space" onClick={this.handleClick}>
@@ -22,6 +23,5 @@ class Space extends Component {
     );
   }
 }
-
 
 export default Space;

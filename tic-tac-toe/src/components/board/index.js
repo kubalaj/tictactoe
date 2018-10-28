@@ -19,8 +19,7 @@ class Board extends Component {
   test = () => {
     let board = [];
     for(let i = 0; i< 3; i++) {
-      board.push(<div className="col"><Space value={this.state.spaces[i]}></Space></div>);
-      console.log(this.state.spaces[i]);
+      board.push(<div key={i} className="col"><Space value={this.state.spaces[i]}></Space></div>);
     }
     return board;
   }

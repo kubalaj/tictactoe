@@ -13,8 +13,10 @@ class Board extends Component {
 
   handleClick = (i) => {
     const spaces = this.state.spaces.slice();
-    spaces[i] = 'X';
-    this.setState({spaces: spaces});
+    if(!spaces[i]) {
+      spaces[i] = 'X';
+      this.setState({spaces: spaces});
+    }
   }
   createSpace = (i) => {
     return(

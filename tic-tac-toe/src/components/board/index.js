@@ -18,11 +18,13 @@ class Board extends Component {
       this.setState({spaces: spaces});
     }
   }
+
   createSpace = (i) => {
     return(
       <Space value={this.state.spaces[i]} onClick={() => this.handleClick(i)}></Space>
     )
   }
+
   createRows = (rowNumber) => {
     let rows = [];
     rowNumber = (rowNumber*3);
@@ -31,6 +33,7 @@ class Board extends Component {
       }
     return rows;
   }
+
   createBoard = () => {
     let board = [];
     for(let i = 0; i < 3; i++) {
@@ -38,6 +41,7 @@ class Board extends Component {
     }
     return board;
   }
+  
   render() {
     return (
       <div className="board">

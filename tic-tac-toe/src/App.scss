@@ -1,5 +1,6 @@
-@import "styles/colors";
+@import "index";
 
 .test {
   color: $color-secondary;
+  font-family: $font-primary;
 }

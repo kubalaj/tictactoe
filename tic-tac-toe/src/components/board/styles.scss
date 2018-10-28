@@ -2,14 +2,14 @@
 
 .board {
   .row {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid $color-tertiary;
     &:last-child {
       border: none;
     }
 
   }
   .col {
-    border-right: 3px solid black;
+    border-right: 3px solid $color-tertiary;
     &:last-child {
       border: none;
     }

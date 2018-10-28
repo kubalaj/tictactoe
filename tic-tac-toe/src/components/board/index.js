@@ -4,7 +4,7 @@ import './styles.scss';
 class Board extends Component {
   render() {
     return (
-      <div>
+      <div className="board">
         <div className="row">
           <div className="col">
             <div className="content">X</div>

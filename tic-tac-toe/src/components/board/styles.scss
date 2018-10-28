@@ -1,7 +1,16 @@
 @import "../../index";
 
-.content {
-  color: $color-secondary;
-  font-family: $font-primary;
-  text-align: center;
+.board {
+  .col {
+    border-right: 3px solid black;
+    &:last-child {
+      border: none;
+    }
+  }
+  .content {
+    color: $color-secondary;
+    font-size: 50px;
+    font-family: $font-primary;
+    text-align: center;
+  }
 }

@@ -10,9 +10,15 @@ class Board extends Component {
       spaces: Array(9).fill(null)
     };
   }
+
+  handleClick = () => {
+    if(!this.state.value){
+      this.setState({value: 'X'});
+    }
+  }
   createSpace = (i) => {
     return(
-      <Space value={this.state.spaces[i]}></Space>
+      <Space value={this.state.spaces[i]} onClick={this.handleClick()}></Space>
     )
   }
   createRows = () => {

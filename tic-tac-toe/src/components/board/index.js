@@ -3,7 +3,6 @@ import './styles.scss';
 
 import Space from '../space';
 
-
 class Board extends Component {
   constructor(props) {
     super(props);

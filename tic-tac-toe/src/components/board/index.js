@@ -16,19 +16,19 @@ class Board extends Component {
       <Space value={this.state.spaces[i]}></Space>
     )
   }
+  test = () => {
+    let board = [];
+    for(let i = 0; i< 3; i++) {
+      board.push(<div className="col"><Space value={this.state.spaces[i]}></Space></div>);
+      console.log(this.state.spaces[i]);
+    }
+    return board;
+  }
   render() {
     return (
       <div className="board">
         <div className="row">
-          <div className="col">
-            {this.createBoard(0)}
-          </div>
-          <div className="col">
-            {this.createBoard(1)}
-          </div>
-          <div className="col">
-            {this.createBoard(2)}
-          </div>
+          {this.test()}
         </div>
         <div className="row">
           <div className="col">

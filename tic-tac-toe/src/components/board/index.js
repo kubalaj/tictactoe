@@ -11,40 +11,45 @@ class Board extends Component {
       spaces: Array(9).fill(null)
     };
   }
+  createBoard = (i) => {
+    return(
+      <Space value={this.state.spaces[i]}></Space>
+    )
+  }
   render() {
     return (
       <div className="board">
         <div className="row">
           <div className="col">
-            <Space></Space>
+            {this.createBoard(0)}
           </div>
           <div className="col">
-            <Space></Space>
+            {this.createBoard(1)}
           </div>
           <div className="col">
-            <Space></Space>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <Space></Space>
-          </div>
-          <div className="col">
-            <Space></Space>
-          </div>
-          <div className="col">
-            <Space></Space>
+            {this.createBoard(2)}
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <Space></Space>
+            {this.createBoard(3)}
           </div>
           <div className="col">
-            <Space></Space>
+            {this.createBoard(4)}
           </div>
           <div className="col">
-            <Space></Space>
+            {this.createBoard(5)}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            {this.createBoard(6)}
+          </div>
+          <div className="col">
+            {this.createBoard(7)}
+          </div>
+          <div className="col">
+            {this.createBoard(8)}
           </div>
         </div>
       </div>

@@ -7,35 +7,35 @@ class App extends Component {
       <div>
         <div className="row">
           <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
           </div>
           <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
           </div>
           <div className="col">
-            <span className="content">X</span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <span className="content">X</span>
-          </div>
-          <div className="col">
-            <span className="content">X</span>
-          </div>
-          <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
           </div>
           <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
           </div>
           <div className="col">
-            <span className="content">X</span>
+            <div className="content">X</div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="content">X</div>
+          </div>
+          <div className="col">
+            <div className="content">X</div>
+          </div>
+          <div className="col">
+            <div className="content">X</div>
           </div>
         </div>
       </div>

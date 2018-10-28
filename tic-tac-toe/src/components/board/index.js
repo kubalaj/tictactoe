@@ -17,24 +17,23 @@ class Board extends Component {
     )
   }
   createRows = () => {
+    let rows = [];
+    for(let i = 0; i < 3; i++) {
+        rows.push(<div key={i} className="col">{this.createSpace(i)}</div>);
+      }
+    return rows;
+  }
+  createBoard = () => {
     let board = [];
     for(let i = 0; i < 3; i++) {
-        board.push(<div key={i} className="col">{this.createSpace(i)}</div>);
-      }
+      board.push(<div key={i} className="row">{this.createRows()}</div>);
+    }
     return board;
   }
   render() {
     return (
       <div className="board">
-        <div className="row">
-          {this.createRows()}
-        </div>
-        <div className="row">
-            {this.createRows()}
-        </div>
-        <div className="row">
-            {this.createRows()}
-        </div>
+        {this.createBoard()}
       </div>
     );
   }

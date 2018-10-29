@@ -12,19 +12,25 @@ class Board extends Component {
     };
   }
 
-  handleClick = (i) => {
-    const spaces = this.state.spaces.slice();
-    if(!spaces[i]) {
-      spaces[i] = 'X';
-      this.setState({spaces: spaces});
-      this.computerMove(spaces);
-    }
+  setStateAsync(state) {
+    return new Promise((resolve) => {
+      this.setState(state, resolve);
+    });
   }
 
-  computerMove = (spaces) => {
-     axios.get(`http://127.0.0.1:5000/api/test`)
+  async handleClick(i) {
+    const spaces = this.state.spaces.slice();
+      spaces[i] = 'X';
+      await this.setStateAsync({spaces: spaces});
+      this.computerMove(i);
+  }
+
+  async computerMove(move) {
+    const spaces = this.state.spaces.slice();
+     axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {
-       console.log('response', res);
+       spaces[res.data] = 'O';
+       this.setStateAsync({spaces: spaces});
      });
   }
 

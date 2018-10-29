@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './styles.scss';
 
 import Space from '../space';
@@ -16,7 +17,15 @@ class Board extends Component {
     if(!spaces[i]) {
       spaces[i] = 'X';
       this.setState({spaces: spaces});
+      this.computerMove(spaces);
     }
+  }
+
+  computerMove = (spaces) => {
+     axios.get(`http://127.0.0.1:5000/api/test`)
+     .then(res => {
+       console.log('response', res);
+     });
   }
 
   createSpace = (i) => {
@@ -41,7 +50,7 @@ class Board extends Component {
     }
     return board;
   }
-  
+
   render() {
     return (
       <div className="board">

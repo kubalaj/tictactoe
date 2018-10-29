@@ -22,7 +22,6 @@ class Board extends Component {
 
   computerMove = (spaces) => {
     console.log('space', spaces);
-    console.log('state', this.state);
   }
 
   createSpace = (i) => {

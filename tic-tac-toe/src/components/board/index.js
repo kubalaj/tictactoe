@@ -16,7 +16,13 @@ class Board extends Component {
     if(!spaces[i]) {
       spaces[i] = 'X';
       this.setState({spaces: spaces});
+      this.computerMove(spaces);
     }
+  }
+
+  computerMove = (spaces) => {
+    console.log('space', spaces);
+    console.log('state', this.state);
   }
 
   createSpace = (i) => {
@@ -41,7 +47,7 @@ class Board extends Component {
     }
     return board;
   }
-  
+
   render() {
     return (
       <div className="board">

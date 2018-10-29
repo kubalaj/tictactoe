@@ -11,11 +11,13 @@ class Board extends Component {
       spaces: Array(9).fill(null)
     };
   }
+
   setStateAsync(state) {
     return new Promise((resolve) => {
       this.setState(state, resolve);
     });
   }
+
   async handleClick(i) {
     const spaces = this.state.spaces.slice();
       spaces[i] = 'X';
@@ -24,7 +26,6 @@ class Board extends Component {
   }
 
   async computerMove(move) {
-    console.log('is called');
     const spaces = this.state.spaces.slice();
      axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {

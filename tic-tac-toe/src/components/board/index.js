@@ -11,12 +11,16 @@ class Board extends Component {
       spaces: Array(9).fill(null)
     };
   }
-
+  setStateAsync(state) {
+    return new Promise((resolve) => {
+      this.setState(state, resolve);
+    });
+  }
   handleClick = (i) => {
     const spaces = this.state.spaces.slice();
     // if(!spaces[i]) {
       spaces[i] = 'X';
-      this.setState({spaces: spaces});
+      this.setStateAsync({spaces: spaces});
       this.computerMove(i);
     // }
   }
@@ -28,7 +32,7 @@ class Board extends Component {
      .then(res => {
        spaces[res.data] = 'O';
        console.log('space', spaces);
-       this.setState({spaces: spaces});
+       this.setStateAsync({spaces: spaces});
      });
   }
 

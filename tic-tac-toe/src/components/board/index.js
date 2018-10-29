@@ -16,24 +16,21 @@ class Board extends Component {
       this.setState(state, resolve);
     });
   }
-  handleClick = (i) => {
+  async handleClick(i) {
     const spaces = this.state.spaces.slice();
-    // if(!spaces[i]) {
       spaces[i] = 'X';
-      this.setStateAsync({spaces: spaces});
+      await this.setStateAsync({spaces: spaces});
       this.computerMove(i);
-    // }
   }
 
-  computerMove = (move) => {
+  async computerMove(move) {
     const spaces = this.state.spaces.slice();
        console.log('space', spaces);
      axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {
        spaces[res.data] = 'O';
-       console.log('space', spaces);
-       this.setStateAsync({spaces: spaces});
      });
+     await this.setStateAsync({spaces: spaces});
   }
 
   createSpace = (i) => {

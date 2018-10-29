@@ -22,9 +22,9 @@ class Board extends Component {
   }
 
   computerMove = (spaces) => {
-     axios.get(`http://127.0.0.1:5000/api/test`)
+     axios.get(`http://127.0.0.1:5000/api/${JSON.stringify(spaces)}`)
      .then(res => {
-       console.log('response', res);
+       console.log('response', res.data);
      });
   }
 

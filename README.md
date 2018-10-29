@@ -31,6 +31,10 @@ Building
   Activate Env
   `. venv/bin/activate`
 
+Running flask
+  `export FLASK_APP=computer_service.py`
+  `flask run`
+
 
 # Instructions
 

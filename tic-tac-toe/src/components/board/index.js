@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './styles.scss';
 
 import Space from '../space';
@@ -22,6 +23,10 @@ class Board extends Component {
 
   computerMove = (spaces) => {
     console.log('space', spaces);
+     axios.get(`https://localhost:5000/api/v1.0/get_move`)
+     .then(res => {
+       console.log('response', res);
+     });
   }
 
   createSpace = (i) => {

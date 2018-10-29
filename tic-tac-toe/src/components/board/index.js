@@ -14,17 +14,21 @@ class Board extends Component {
 
   handleClick = (i) => {
     const spaces = this.state.spaces.slice();
-    if(!spaces[i]) {
+    // if(!spaces[i]) {
       spaces[i] = 'X';
       this.setState({spaces: spaces});
-      this.computerMove(spaces);
-    }
+      this.computerMove(i);
+    // }
   }
 
-  computerMove = (spaces) => {
-     axios.get(`http://127.0.0.1:5000/api/${JSON.stringify(spaces)}`)
+  computerMove = (move) => {
+    const spaces = this.state.spaces.slice();
+       console.log('space', spaces);
+     axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {
-       console.log('response', res.data);
+       spaces[res.data] = 'O';
+       console.log('space', spaces);
+       this.setState({spaces: spaces});
      });
   }
 

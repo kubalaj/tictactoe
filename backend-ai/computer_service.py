@@ -14,6 +14,9 @@ test = [
 def get_move():
     return jsonify({'test': test})
 
+@app.route('/api/v1.0/is_winner', methods=['GET'])
+def is_winner():
+    return jsonify({'test': test})
 #0 Check to see if there is a Winner
 #1 Need a Function to See Computer Can Make Move To Win game
 #2 Need Function to see if there is a move Player would make to # WARNING:

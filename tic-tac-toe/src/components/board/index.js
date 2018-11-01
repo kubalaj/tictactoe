@@ -3,12 +3,20 @@ import axios from 'axios';
 import './styles.scss';
 
 import Space from '../space';
+import Modal from '../modal';
 
 class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spaces: Array(9).fill(null)
+      spaces: Array(9).fill(null),
+      isEndGame: false,
+      message: ''
+    };
+    this.baseState = {
+        spaces: Array(9).fill(null),
+        isEndGame: false,
+        message: ''
     };
   }
 
@@ -20,18 +28,43 @@ class Board extends Component {
 
   async handleClick(i) {
     const spaces = this.state.spaces.slice();
-      spaces[i] = 'X';
-      await this.setStateAsync({spaces: spaces});
-      this.computerMove(i);
+      if(spaces[i] !== 'O' && spaces[i] !== 'X'){
+        spaces[i] = 'X';
+        await this.setStateAsync({spaces: spaces});
+        this.computerMove(i);
+      }
+  }
+
+  hasGameEnded() {
+    axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
+      if(res.data !== false) {
+        (this.setState({
+          spaces: this.state.spaces,
+          isEndGame: true,
+          message: res.data
+        }))
+      }
+    });
+  }
+
+  async resetBoard() {
+    await this.setStateAsync(this.baseState);
+    axios.get(`http://127.0.0.1:5000/api/reset`);
   }
 
   async computerMove(move) {
+    this.hasGameEnded();
     const spaces = this.state.spaces.slice();
      axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {
        spaces[res.data] = 'O';
        this.setStateAsync({spaces: spaces});
+       if(typeof res.data === 'string') {
+         console.log('werks');
+       }
      });
+
+     this.hasGameEnded()
   }
 
   createSpace = (i) => {
@@ -59,8 +92,11 @@ class Board extends Component {
 
   render() {
     return (
-      <div className="board">
-        {this.createBoard()}
+      <div className="container__main-content">
+        <div className="board">
+          {this.createBoard()}
+        </div>
+        {this.state.isEndGame ? <Modal value={this.state.message} onClick={() => this.resetBoard()}>Modal</Modal> : null}
       </div>
     );
   }

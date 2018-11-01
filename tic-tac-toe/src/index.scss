@@ -1,6 +1,7 @@
 @import "styles/colors";
 @import "styles/typography";
 @import "styles/grid";
+@import "styles/buttons";
 
 body {
   margin: 10%;
@@ -11,4 +12,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+button {
+  font-family: $font-primary;
+  text-transform: uppercase;
+  background-color: Transparent;
+  border: 1px solid black;
+  background-color: Transparent;
+  &:hover {
+    cursor: pointer;
+  }
 }

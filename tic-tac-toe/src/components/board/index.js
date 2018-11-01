@@ -90,7 +90,7 @@ class Board extends Component {
       <div className="board">
         {this.createBoard()}
         <button onClick={() => this.resetBoard()}>RESET</button>
-        {this.state.isEndGame ? <Modal>Modal</Modal> : null}
+        {this.state.isEndGame ? <Modal onClick={() => this.resetBoard()}>Modal</Modal> : null}
       </div>
     );
   }

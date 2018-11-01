@@ -8,8 +8,9 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spaces: Array(9).fill(null)
+      spaces: Array.from(Array(9).keys())
     };
+    console.log('state', this.state);
   }
 
   setStateAsync(state) {

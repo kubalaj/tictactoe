@@ -1,27 +1,13 @@
+# Tic Tac Toe With MiniMax
+
+The following project is a tic tac toe game built with react, hitting a locally ran python and flask back end. The game is a demonstration of the Mini Max Algorithm making the computer AI unbeatable.
+
+
 # Build Notes
-FE
 
-`cd tic-tac-toe`
+In order to use this game it is suggested that you build the backend first.
 
-`npm start`
-
-
-`npm start`
-  Starts the development server.
-
-`npm run build`
-  Bundles the app into static files for production.
-
-`npm test`
-  Starts the test runner.
-
-`npm run eject`
-  Removes this tool and copies build dependencies, configuration files
-  and scripts into the app directory. If you do this, you can’t go back!
-
-
-  BE
-
+## Backend Build
 Building
   - Download python https://www.python.org/downloads/
   - Install virtual env
@@ -34,6 +20,32 @@ Building
 Running flask
   `export FLASK_APP=computer_service.py`
   `flask run`
+
+## Frontend Build
+
+Once you have the backend running change directories to the main project.
+
+`cd tic-tac-toe`
+
+Then run:
+
+`npm start`
+
+This project was bootstrapped with the Create React App. All documentation for additional functionality that comes out of the box with that framework is listed in the `tic-tac-toe` directory
+
+# Structure And Methodologies
+#### Version Control
+#### Styling
+#### Folder Structure
+
+# Common Errors
+- Sometimes the backend, due to technical debt and future planned work, gets out of sync with the game. This will cause the game to execute and decide a winner before there is an actual winner. If this ever happens either restart the backend client followed by restarted(RECOMMENDED) or try to get to the end of the game where you can click okay
+
+# TODO
+#### Tests
+#### Refactor State Mangement
+#### Host on Heroku with CI Deployment
+
 
 
 # Instructions

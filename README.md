@@ -9,16 +9,21 @@ In order to use this game it is suggested that you build the backend first.
 
 ## Backend Build
 Building
-  - Download the most recent version of python https://www.python.org/downloads/
-  - Install the virtual env
-      - `cd backend-ai`
-      - `python3 -m venv venv`
+  - Clone the repo `git clone https://github.com/kubalaj/tictactoecomputer`
 
-  - Activate Env
+  - Download the most recent version of python https://www.python.org/downloads/ You must have python3 to run this code.
+  - Activate the virtual Enviorment
 
   `. venv/bin/activate`
-  - Run flask
-    - `export FLASK_APP=computer_service.py`
+  - Install and Run flask
+    - Install pip
+      - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+      - `python get-pip.py`
+    - Install FLASK
+      - `pip install flask`
+    - Install CORS package
+      - `pip install flask-cors`
+    - Run Flask
     - `flask run`
 
 ## Frontend Build
@@ -29,7 +34,7 @@ Once you have the backend running change directories to the main project. NOTE: 
 - `cd tic-tac-toe`
 
 Then run:
-
+- `npm install`
 - `npm start`
 
 This project was bootstrapped with the Create React App. All documentation for additional functionality that comes out of the box with that framework is listed in the `tic-tac-toe` directory

@@ -14,7 +14,7 @@ class Modal extends Component {
             <p>{this.props.value}</p>
           </div>
           <div class="row">
-            <button onClick={() => this.props.onClick()}>Okay</button>
+            <button onClick={() => this.props.onClick()}>Yes!</button>
           </div>
         </div>
       </div>

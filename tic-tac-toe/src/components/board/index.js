@@ -8,10 +8,12 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spaces: Array(9).fill(null)
+      spaces: Array(9).fill(null),
+      isEndGame: false
     };
     this.baseState = {
-        spaces: Array(9).fill(null)
+        spaces: Array(9).fill(null),
+        isEndGame: false
     };
   }
 
@@ -28,13 +30,14 @@ class Board extends Component {
       this.computerMove(i);
   }
 
-  hasGameEnded() {
+  async hasGameEnded() {
     axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
-      console.log(res.data);
       if(res.data !== false) {
-        alert(res.data)
+        await(this.setState({
+          spaces: this.state.spaces,
+          isEndGame: true
+        }))
       }
-      return res.data;
     });
   }
 
@@ -86,6 +89,7 @@ class Board extends Component {
       <div className="board">
         {this.createBoard()}
         <button onClick={() => this.resetBoard()}>RESET</button>
+        {this.state.isEndGame ? <div>Modal</div> : null}
       </div>
     );
   }

@@ -44,6 +44,11 @@ This project also tries to follow brad frosts [atomic design](http://bradfrost.c
 
 # TODO
 #### Tests
+- A TDD or BDD framework has so many benefits it would have been nice to add some form of tests to help prevent regression and assure confidence in releases of the code.
 
-#### Refactor State Mangement
+#### Refactor State Management
+- Introduce RXJS or Redux. There is a little bit of a hack in the application now whenever state is updated and making it asynchronous. There are other libraries and frameworks to solve this issue better than is currently implemented.
+- State is both stored on the Frontend and the Backend We can solve this by passing the state to the Backend. Some work was made towards this goal but not completed. The work is stored in the `clientSideState` branch.
+
 #### Host on Heroku with CI Deployment
+- In order to get this web application hosted on a 3rd party there is a dependency of changing the state management. This is done on the backend project, but it would be a good goal to add a deployment process where every time you push to master code is built.

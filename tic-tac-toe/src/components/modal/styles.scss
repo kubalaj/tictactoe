@@ -5,9 +5,10 @@
   height: 200px;
   text-align: center;
   text-transform: uppercase;
-  background-color: $color-tertiary;
+  background-color: $color-secondary;
   color: $color-font-secondary;
+  font-size: $font-primary-size;
   z-index: 1;
   position: absolute;
-  top: 50%;
+  top: 20%;
 }

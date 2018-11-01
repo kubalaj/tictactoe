@@ -29,6 +29,9 @@ class Board extends Component {
     const spaces = this.state.spaces.slice();
      axios.get(`http://127.0.0.1:5000/api/${move}`)
      .then(res => {
+       if(typeof res.data === 'string') {
+         console.log('werks');
+       }
        spaces[res.data] = 'O';
        this.setStateAsync({spaces: spaces});
      });

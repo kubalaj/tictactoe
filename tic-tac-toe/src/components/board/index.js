@@ -30,10 +30,10 @@ class Board extends Component {
       this.computerMove(i);
   }
 
-  async hasGameEnded() {
+  hasGameEnded() {
     axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
       if(res.data !== false) {
-        await(this.setState({
+        (this.setState({
           spaces: this.state.spaces,
           isEndGame: true
         }))

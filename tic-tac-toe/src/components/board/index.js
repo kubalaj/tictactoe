@@ -10,6 +10,9 @@ class Board extends Component {
     this.state = {
       spaces: Array(9).fill(null)
     };
+    this.baseState = {
+        spaces: Array(9).fill(null)
+    };
   }
 
   setStateAsync(state) {
@@ -36,17 +39,10 @@ class Board extends Component {
   }
 
   async resetBoard() {
-    console.log('reset', Array.from(Array(9).keys()));
-    const arr = Array.from(Array(9).keys()).slice();
-    console.log(this.state);
-    // axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
-    //   if(res.data !== false) {
-    //     const blankBoard = {
-    //       spaces: Array(9).fill(null)
-    //     }
-    //     this.setStateAsync(blankBoard);
-    //   }
-    // });
+    await this.setStateAsync(this.baseState);
+    this.createBoard();
+    axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
+    });
   }
 
   async computerMove(move) {

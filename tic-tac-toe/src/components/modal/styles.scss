@@ -20,13 +20,15 @@
       font-family: $font-primary;
       text-transform: uppercase;
       background-color: Transparent;
-      border: $color-font-secondary;
+      border: 1px solid $color-font-secondary;
       color: $color-font-secondary;
+      font-size: $font-secondary-size;
+
       background-color: Transparent;
       &:hover {
         cursor: pointer;
-        border: 1px solid $color-font-secondary;
-        color: $color-font-secondary;
+        border: 1px solid $color-tertiary;
+        color: $color-tertiary;
       }
     }
   }

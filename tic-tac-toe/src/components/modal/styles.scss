@@ -1,4 +1,13 @@
 @import "../../index";
 
 .modal {
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $color-tertiary;
+  color: $color-primary-font;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
 }

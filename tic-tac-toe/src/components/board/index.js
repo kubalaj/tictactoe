@@ -92,9 +92,10 @@ class Board extends Component {
 
   render() {
     return (
-      <div className="board">
-        {this.createBoard()}
-        <button onClick={() => this.resetBoard()}>RESET</button>
+      <div className="container__main-content">
+        <div className="board">
+          {this.createBoard()}
+        </div>
         {this.state.isEndGame ? <Modal value={this.state.message} onClick={() => this.resetBoard()}>Modal</Modal> : null}
       </div>
     );

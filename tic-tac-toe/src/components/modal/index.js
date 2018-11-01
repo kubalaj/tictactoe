@@ -8,7 +8,7 @@ class Modal extends Component {
 
   render() {
     return (
-      <div className="space" >
+      <div className="modal">
         {this.props.value}
         <button onClick={() => this.props.onClick()}>Okay</button>
       </div>

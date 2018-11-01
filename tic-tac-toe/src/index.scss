@@ -1,7 +1,6 @@
 @import "styles/colors";
 @import "styles/typography";
 @import "styles/grid";
-@import "styles/buttons";
 
 body {
   margin: 10%;
@@ -19,7 +18,8 @@ button {
   font-family: $font-primary;
   text-transform: uppercase;
   background-color: Transparent;
-  border: 1px solid black;
+  border: $color-font-secondary;
+  color: $color-font-secondary;
   background-color: Transparent;
   &:hover {
     cursor: pointer;

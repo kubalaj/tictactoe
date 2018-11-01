@@ -25,7 +25,7 @@ class Board extends Component {
       this.computerMove(i);
   }
 
-  async hasGameEnded() {
+  hasGameEnded() {
     axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
       console.log(res.data);
       if(res.data !== false) {
@@ -34,6 +34,18 @@ class Board extends Component {
       return res.data;
     });
   }
+
+  resetBoard() {
+    axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
+      if(res.data !== false) {
+        const blankBoard = {
+          spaces: Array(9).fill(null)
+        }
+        this.setStateAsync(this.blankBoard);
+      }
+    });
+  }
+
   async computerMove(move) {
     this.hasGameEnded();
     const spaces = this.state.spaces.slice();
@@ -76,6 +88,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.createBoard()}
+        <button onclick="reset()">RESET</button>
       </div>
     );
   }

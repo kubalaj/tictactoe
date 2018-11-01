@@ -36,7 +36,9 @@ class Board extends Component {
   }
 
   async resetBoard() {
-    this.setStateAsync({spaces: Array(9).fill(null)})
+    console.log('reset', Array.from(Array(9).keys()));
+    const arr = Array.from(Array(9).keys()).slice();
+    console.log(this.state);
     // axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
     //   if(res.data !== false) {
     //     const blankBoard = {
@@ -44,7 +46,7 @@ class Board extends Component {
     //     }
     //     this.setStateAsync(blankBoard);
     //   }
-    });
+    // });
   }
 
   async computerMove(move) {
@@ -89,7 +91,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.createBoard()}
-        <button onClick={this.resetBoard}>RESET</button>
+        <button onClick={() => this.resetBoard()}>RESET</button>
       </div>
     );
   }

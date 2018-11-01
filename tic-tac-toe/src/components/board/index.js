@@ -3,6 +3,7 @@ import axios from 'axios';
 import './styles.scss';
 
 import Space from '../space';
+import Modal from '../modal';
 
 class Board extends Component {
   constructor(props) {
@@ -89,7 +90,7 @@ class Board extends Component {
       <div className="board">
         {this.createBoard()}
         <button onClick={() => this.resetBoard()}>RESET</button>
-        {this.state.isEndGame ? <div>Modal</div> : null}
+        {this.state.isEndGame ? <Modal>Modal</Modal> : null}
       </div>
     );
   }

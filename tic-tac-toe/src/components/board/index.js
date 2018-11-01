@@ -28,7 +28,7 @@ class Board extends Component {
 
   async handleClick(i) {
     const spaces = this.state.spaces.slice();
-      if(spaces[i] !== 'O' && spaces[i] !== 'X'){
+      if(spaces[i] !== 'O' && spaces[i] !== 'X' && this.state.isEndGame == false){
         spaces[i] = 'X';
         await this.setStateAsync({spaces: spaces});
         this.computerMove(i);

@@ -40,7 +40,6 @@ class Board extends Component {
 
   async resetBoard() {
     await this.setStateAsync(this.baseState);
-    this.createBoard();
     axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
     });
   }

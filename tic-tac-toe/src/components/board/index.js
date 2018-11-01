@@ -10,11 +10,13 @@ class Board extends Component {
     super(props);
     this.state = {
       spaces: Array(9).fill(null),
-      isEndGame: false
+      isEndGame: false,
+      message: ''
     };
     this.baseState = {
         spaces: Array(9).fill(null),
-        isEndGame: false
+        isEndGame: false,
+        message: ''
     };
   }
 
@@ -38,7 +40,8 @@ class Board extends Component {
       if(res.data !== false) {
         (this.setState({
           spaces: this.state.spaces,
-          isEndGame: true
+          isEndGame: true,
+          message: res.data
         }))
       }
     });
@@ -92,7 +95,7 @@ class Board extends Component {
       <div className="board">
         {this.createBoard()}
         <button onClick={() => this.resetBoard()}>RESET</button>
-        {this.state.isEndGame ? <Modal onClick={() => this.resetBoard()}>Modal</Modal> : null}
+        {this.state.isEndGame ? <Modal value={this.state.message} onClick={() => this.resetBoard()}>Modal</Modal> : null}
       </div>
     );
   }

@@ -35,14 +35,15 @@ class Board extends Component {
     });
   }
 
-  resetBoard() {
-    axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
-      if(res.data !== false) {
-        const blankBoard = {
-          spaces: Array(9).fill(null)
-        }
-        this.setStateAsync(this.blankBoard);
-      }
+  async resetBoard() {
+    this.setStateAsync({spaces: Array(9).fill(null)})
+    // axios.get(`http://127.0.0.1:5000/api/reset`).then(res => {
+    //   if(res.data !== false) {
+    //     const blankBoard = {
+    //       spaces: Array(9).fill(null)
+    //     }
+    //     this.setStateAsync(blankBoard);
+    //   }
     });
   }
 
@@ -88,7 +89,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.createBoard()}
-        <button onclick="reset()">RESET</button>
+        <button onClick={this.resetBoard}>RESET</button>
       </div>
     );
   }

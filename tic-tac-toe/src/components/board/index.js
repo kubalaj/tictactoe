@@ -31,9 +31,8 @@ class Board extends Component {
 
      axios.get(`http://127.0.0.1:5000/api/${spaces}`)
      .then(res => {
-       console.log('response', JSON.parse(res.data));
-       // spaces[res.data] = 'O';
-       // this.setStateAsync({spaces: spaces});
+       console.log('response', (res.data));
+       this.setStateAsync({spaces: res.data});
      });
   }
 

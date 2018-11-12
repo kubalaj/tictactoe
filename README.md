@@ -1,6 +1,10 @@
 # Tic Tac Toe With MiniMax
 
-The following project is a tic tac toe game built with react, hitting a locally ran python and flask back end. The game is a demonstration of the Mini Max Algorithm making the computer AI unbeatable.
+The following project is a tic tac toe game built with react, hitting a locally ran python and flask back end. The game is a demonstration of the Mini Max Algorithm making the computer AI unbeatable. API is available on heroku with CI deployment every time the master branch is updated:
+
+ https://intense-woodland-70087.herokuapp.com/
+
+(NOTE) certain endpoints are available with this link, but no templates are rendered.
 
 
 # Build Notes
@@ -58,6 +62,9 @@ This project also tries to follow brad frost's [atomic design](http://bradfrost.
 
 #### Host on Heroku with CI Deployment
 - In order to get this web application hosted on a 3rd party there is a dependency of changing the state management. This is done on the backend project, but it would be a good goal to add a deployment process where every time you push to master code is built.
+
+#### Documentation
+- The API should be documented using some sort of service like swagger.
 
 #### Introduce Alpha Beta Pruning
 - The following algorithm could be made better by implementing [Alpha-beta prunning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). Seeing as the problem is finite set of clickable squares, performance isn't too big of a concern and this work item can be put off.

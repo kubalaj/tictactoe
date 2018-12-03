@@ -50,7 +50,6 @@ class Board extends Component {
 
   async resetBoard() {
     await this.setStateAsync(this.baseState);
-    axios.get(`http://127.0.0.1:5000/api/reset`);
   }
 
   async computerMove() {
@@ -60,7 +59,6 @@ class Board extends Component {
      .then(res => {
        this.setStateAsync({spaces: res.data});
      });
-
      this.hasGameEnded()
   }
 

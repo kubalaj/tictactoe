@@ -9,12 +9,12 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spaces: Array(9).fill(null),
+      spaces: Array.from(Array(9).keys()),
       isEndGame: false,
       message: ''
     };
     this.baseState = {
-        spaces: Array(9).fill(null),
+        spaces: Array.from(Array(9).keys()),
         isEndGame: false,
         message: ''
     };
@@ -35,36 +35,32 @@ class Board extends Component {
       }
   }
 
-  hasGameEnded() {
-    axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
-      if(res.data !== false) {
-        (this.setState({
-          spaces: this.state.spaces,
-          isEndGame: true,
-          message: res.data
-        }))
-      }
-    });
-  }
-
+  // hasGameEnded() {
+  //   axios.get(`http://127.0.0.1:5000/api/win`).then(res => {
+  //     if(res.data !== false) {
+  //       (this.setState({
+  //         spaces: this.state.spaces,
+  //         isEndGame: true,
+  //         message: res.data
+  //       }))
+  //     }
+  //   });
+  // }
+  //
   async resetBoard() {
     await this.setStateAsync(this.baseState);
     axios.get(`http://127.0.0.1:5000/api/reset`);
   }
 
-  async computerMove(move) {
-    this.hasGameEnded();
+  async computerMove() {
+    // this.hasGameEnded();
     const spaces = this.state.spaces.slice();
-     axios.get(`http://127.0.0.1:5000/api/${move}`)
+     axios.get(`http://127.0.0.1:5000/api/${spaces}`)
      .then(res => {
-       spaces[res.data] = 'O';
-       this.setStateAsync({spaces: spaces});
-       if(typeof res.data === 'string') {
-         console.log('werks');
-       }
+       this.setStateAsync({spaces: res.data});
      });
 
-     this.hasGameEnded()
+     // this.hasGameEnded()
   }
 
   createSpace = (i) => {

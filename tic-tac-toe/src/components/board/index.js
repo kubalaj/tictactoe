@@ -38,7 +38,6 @@ class Board extends Component {
   hasGameEnded() {
     const spaces = this.state.spaces.slice()
     axios.get(`http://127.0.0.1:5000/api/win/${spaces}`).then(res => {
-      console.log('isWin', res);
       if(res.data !== false) {
         (this.setState({
           spaces: this.state.spaces,
@@ -47,6 +46,7 @@ class Board extends Component {
         }))
       }
     });
+    console.log('has ended?', this.state.isEndGame, this.state.spaces);
   }
 
   async resetBoard() {
@@ -55,12 +55,14 @@ class Board extends Component {
 
   async computerMove() {
     this.hasGameEnded();
-    const spaces = this.state.spaces.slice();
-     axios.get(`http://127.0.0.1:5000/api/${spaces}`)
-     .then(res => {
-       this.setStateAsync({spaces: res.data});
-     });
-     this.hasGameEnded()
+    if(this.state.isEndGame !== true) {
+      const spaces = this.state.spaces.slice();
+       axios.get(`http://127.0.0.1:5000/api/${spaces}`)
+       .then(res => {
+         this.setStateAsync({spaces: res.data});
+         this.hasGameEnded();
+       });
+    }
   }
 
   createSpace = (i) => {

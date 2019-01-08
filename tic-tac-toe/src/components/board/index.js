@@ -38,6 +38,7 @@ class Board extends Component {
   hasGameEnded() {
     const spaces = this.state.spaces.slice()
     axios.get(`http://127.0.0.1:5000/api/win/${spaces}`).then(res => {
+      console.log('isWin', res);
       if(res.data !== false) {
         (this.setState({
           spaces: this.state.spaces,

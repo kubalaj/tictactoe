@@ -9,7 +9,7 @@ class Space extends Component {
   render() {
     return (
       <div className="space" onClick={() => this.props.onClick()}>
-        <p>{this.props.value}</p>
+        <p>{this.props.value === "X" || this.props.value === "O" ? this.props.value : ""}</p>
       </div>
     );
   }

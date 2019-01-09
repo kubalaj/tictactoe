@@ -46,7 +46,6 @@ class Board extends Component {
         }))
       }
     });
-    console.log('has ended?', this.state.isEndGame, this.state.spaces);
   }
 
   async resetBoard() {

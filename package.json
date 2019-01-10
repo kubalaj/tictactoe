@@ -60,8 +60,9 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && npm install node-sass",
-    "test": "node scripts/test.js"
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "heroku-postbuild": "npm install node-sass --save"
   },
   "eslintConfig": {
     "extends": "react-app"

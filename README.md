@@ -4,6 +4,10 @@ The following project is a tic tac toe game built with react, hitting a locally 
 
  https://intense-woodland-70087.herokuapp.com/
 
+ Front End is hosted with Firebase
+
+ https://tictactoe-220903.firebaseapp.com/
+
 (NOTE) certain endpoints are available with this link, but no templates are rendered.
 
 
@@ -55,13 +59,6 @@ This project also tries to follow brad frost's [atomic design](http://bradfrost.
 # TODO
 #### Tests
 - A TDD or BDD framework has so many benefits. It would have been nice to add some form of tests to help prevent regression and assure confidence in releases of the code.
-
-#### Refactor State Management
-- Introduce RXJS or Redux. There is a hack to update state in the current application, to make it preform better with the asynchronicity of the code. There are other libraries and frameworks to solve this issue better than what is currently implemented.
-- State is both stored on the front end and the back end. We can solve this by passing the state to the back end. Some work was made towards this goal but, was not completed. The work is stored in the `clientSideState` branch.
-
-#### Host on Heroku with CI Deployment
-- In order to get this web application hosted on a 3rd party there is a dependency of changing the state management. This is done on the backend project, but it would be a good goal to add a deployment process where every time you push to master code is built.
 
 #### Documentation
 - The API should be documented using some sort of service like swagger.

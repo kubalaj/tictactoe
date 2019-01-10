@@ -37,7 +37,7 @@ class Board extends Component {
 
   hasGameEnded() {
     const spaces = this.state.spaces.slice()
-    axios.get(`http://127.0.0.1:5000/api/win/${spaces}`).then(res => {
+    axios.get(`https://intense-woodland-70087.herokuapp.com/api/win/${spaces}`).then(res => {
       if(res.data !== false) {
         (this.setState({
           spaces: this.state.spaces,
@@ -56,7 +56,7 @@ class Board extends Component {
     this.hasGameEnded();
     if(this.state.isEndGame !== true) {
       const spaces = this.state.spaces.slice();
-       axios.get(`http://127.0.0.1:5000/api/${spaces}`)
+       axios.get(`https://intense-woodland-70087.herokuapp.com/api/${spaces}`)
        .then(res => {
          this.setStateAsync({spaces: res.data});
          this.hasGameEnded();

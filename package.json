@@ -59,7 +59,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && npm install node-sass",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
